@@ -1,0 +1,14 @@
+server:
+  port: 8081
+spring:
+  application.name: auth-service
+  datasource:
+    url: ${AUTH_DB_URL:jdbc:postgresql://localhost:5433/authdb}
+    username: ${AUTH_DB_USER:auth}
+    password: ${AUTH_DB_PASSWORD:auth}
+  sql.init.mode: always
+  jdbc.template.query-timeout: 5
+jwt:
+  secret: ${JWT_SECRET:development-key-for-jwt-must-have-at-least-32-bytes}
+  access-ttl-minutes: 15
+  refresh-ttl-hours: 24

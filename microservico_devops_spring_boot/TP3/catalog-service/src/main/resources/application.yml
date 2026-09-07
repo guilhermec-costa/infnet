@@ -1,0 +1,9 @@
+server.port: 8082
+spring:
+  application.name: catalog-service
+  r2dbc:
+    url: ${CATALOG_R2DBC_URL:r2dbc:postgresql://localhost:5434/catalogdb}
+    username: ${CATALOG_DB_USER:catalog}
+    password: ${CATALOG_DB_PASSWORD:catalog}
+  sql.init.mode: always
+auth-service.url: ${AUTH_SERVICE_URL:http://localhost:8081}
